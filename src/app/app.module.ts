@@ -8,6 +8,8 @@ import { PedidosComponent } from './pedidos/pedidos.component';
 
 import { RouterModule, Routes } from '@angular/router';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { CoursesComponent } from './courses/courses.component';
+import { CoursesDetailComponent } from './courses-detail/courses-detail.component';
 
 //Login
 //Menu
@@ -17,6 +19,14 @@ const routes: Routes = [
 {
   path: 'login',
   component: LoginComponent,
+},
+{
+  path: 'courses',
+  component: CoursesComponent,
+},
+{
+  path: 'courses/:course',
+  component: CoursesDetailComponent,
 },
 {
   path: 'menu',
@@ -43,7 +53,9 @@ const routes: Routes = [
     LoginComponent,
     MenuComponent,
     PedidosComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    CoursesComponent,
+    CoursesDetailComponent
   ],
   imports: [
     BrowserModule,
