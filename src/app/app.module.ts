@@ -10,6 +10,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { CoursesComponent } from './courses/courses.component';
 import { CoursesDetailComponent } from './courses-detail/courses-detail.component';
+import { MenuDesayunoComponent } from './menu-desayuno/menu-desayuno.component';
+import { MenuAlmuerzoComponent } from './menu-almuerzo/menu-almuerzo.component';
 
 //Login
 //Menu
@@ -29,8 +31,19 @@ const routes: Routes = [
   component: CoursesDetailComponent,
 },
 {
+  //Ruta principal
   path: 'menu',
   component: MenuComponent,
+  children: [
+    {
+      path: '',
+      component: MenuDesayunoComponent,
+    },
+    {
+      path: 'almuerzo',
+      component: MenuAlmuerzoComponent,
+    }
+  ]
 },
 {
   path: 'pedidos',
